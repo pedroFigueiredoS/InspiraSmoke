@@ -11,6 +11,7 @@ pipeline {
                 echo "Instalando dependências..."
                 script {
                     try {
+                        // Instalação das dependências
                         sh 'pip install robotframework==6.0.2'
                         sh 'pip install selenium==4.10.0'
                         sh 'pip install robotframework-seleniumlibrary==6.0.0'
@@ -28,8 +29,8 @@ pipeline {
                 echo "Executando teste com relatório HTML..."
                 script {
                     try {
-                        // Substituindo o uso de nohup por um comando adequado para Windows
-                        sh "robot ${ROBOT_OPTIONS} -d results inspira_smoke.robot"  // Execute o teste diretamente sem nohup
+                        // Rodando os testes diretamente sem o uso de 'nohup'
+                        sh "robot ${ROBOT_OPTIONS} -d results inspira_smoke.robot"  // Substitua pelo nome correto do seu arquivo de testes
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         error "Falha na execução dos testes: ${e}"

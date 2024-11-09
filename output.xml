@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-11-09T12:26:22.273183" rpa="false" schemaversion="5">
+<suite id="s1" name="Inspira Smoke" source="C:\Users\suporte\Desktop\robotInspiraSmoke\inspira_smoke.robot">
+<test id="s1-t1" name="Caso de teste 01 - Login Inspira (Candidato Comum)" line="7">
+<kw name="Abrir o navegador" owner="inspira_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-09T12:26:22.463694" level="FAIL">Variable '${URL_LOGIN}' not found.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-11-09T12:26:22.462651" elapsed="0.001043">Variable '${URL_LOGIN}' not found.</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-11-09T12:26:22.463694" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-11-09T12:26:22.462651" elapsed="0.001043">Variable '${URL_LOGIN}' not found.</status>
+</kw>
+<kw name="Fechar navegador" owner="inspira_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-09T12:26:22.463694" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-09T12:26:22.463694" elapsed="0.000994"/>
+</kw>
+<doc>Esse teste tem como objetivo fazer login com um usuário comum</doc>
+<tag>Login</tag>
+<status status="FAIL" start="2024-11-09T12:26:22.461770" elapsed="0.003008">Setup failed:
+Variable '${URL_LOGIN}' not found.</status>
+</test>
+<status status="FAIL" start="2024-11-09T12:26:22.274182" elapsed="0.191602"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Login</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Inspira Smoke">Inspira Smoke</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

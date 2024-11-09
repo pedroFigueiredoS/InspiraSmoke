@@ -28,7 +28,8 @@ pipeline {
                 echo "Executando teste com relatório HTML..."
                 script {
                     try {
-                        sh "robot ${ROBOT_OPTIONS} -d results inspira_smoke.robot"  // Substitua "inspira_smoke.robot" pelo nome do seu arquivo de testes
+                        // Substituindo o uso de nohup por um comando adequado para Windows
+                        sh "robot ${ROBOT_OPTIONS} -d results inspira_smoke.robot"  // Execute o teste diretamente sem nohup
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         error "Falha na execução dos testes: ${e}"

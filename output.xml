@@ -1,44 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-11-09T12:26:22.273183" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-11-09T13:32:39.166388" rpa="false" schemaversion="5">
 <suite id="s1" name="Inspira Smoke" source="C:\Users\suporte\Desktop\robotInspiraSmoke\inspira_smoke.robot">
 <test id="s1-t1" name="Caso de teste 01 - Login Inspira (Candidato Comum)" line="7">
 <kw name="Abrir o navegador" owner="inspira_resources" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-11-09T12:26:22.463694" level="FAIL">Variable '${URL_LOGIN}' not found.</msg>
-<arg>${URL_LOGIN}</arg>
+<msg time="2024-11-09T13:32:39.412946" level="INFO">Opening browser 'Chrome' to base url 'https://inspira.inspirali.com/'.</msg>
+<arg>${URLlogin}</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2024-11-09T12:26:22.462651" elapsed="0.001043">Variable '${URL_LOGIN}' not found.</status>
+<status status="PASS" start="2024-11-09T13:32:39.411922" elapsed="4.191130"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" start="2024-11-09T12:26:22.463694" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-09T13:32:43.603052" elapsed="0.036918"/>
 </kw>
-<status status="FAIL" start="2024-11-09T12:26:22.462651" elapsed="0.001043">Variable '${URL_LOGIN}' not found.</status>
+<status status="PASS" start="2024-11-09T13:32:39.411922" elapsed="4.228048"/>
+</kw>
+<kw name="Login no Inspira" owner="inspira_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-09T13:32:43.641013" level="INFO">Typing text '14146807085' into text field 'xpath=//input[@placeholder='CPF']'.</msg>
+<arg>xpath=//input[@placeholder='CPF']</arg>
+<arg>${CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-09T13:32:43.641013" elapsed="0.151959"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-09T13:32:43.792972" level="INFO">Typing text '01012000' into text field 'xpath=//input[@placeholder='dd/mm/aaaa']'.</msg>
+<arg>xpath=//input[@placeholder='dd/mm/aaaa']</arg>
+<arg>${BirthDay}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-09T13:32:43.792972" elapsed="0.114936"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-09T13:32:43.907908" level="INFO">Clicking button 'css=.button-app--primary'.</msg>
+<arg>css=.button-app--primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-09T13:32:43.907908" elapsed="0.052446"/>
+</kw>
+<status status="PASS" start="2024-11-09T13:32:43.641013" elapsed="0.319341"/>
+</kw>
+<kw name="Verificando componentes em tela" owner="inspira_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@class='button-secondary'][contains(.,'Conhecer')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-09T13:32:43.961362" elapsed="4.563452"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-09T13:32:48.539913" level="INFO">Element 'xpath=(//span[@class='text-btn desktop'][contains(.,'Realizar atividade')])[1]' is displayed.</msg>
+<arg>xpath=(//span[@class='text-btn desktop'][contains(.,'Realizar atividade')])[1]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-09T13:32:48.524814" elapsed="0.015099"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-09T13:32:48.552853" level="INFO">Element 'xpath=(//span[@class='text-btn desktop'][contains(.,'Realizar atividade')])[2]' is displayed.</msg>
+<arg>xpath=(//span[@class='text-btn desktop'][contains(.,'Realizar atividade')])[2]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-09T13:32:48.539913" elapsed="0.012940"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-09T13:32:48.568218" level="INFO">Element 'xpath=(//p[contains(.,'O Inspira é composto por atividades que te levam a ter contato com a jornada de aprendizagem do nosso ecossistema de ensino médico e de saúde.')])[1]' is displayed.</msg>
+<arg>xpath=(//p[contains(.,'O Inspira é composto por atividades que te levam a ter contato com a jornada de aprendizagem do nosso ecossistema de ensino médico e de saúde.')])[1]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-09T13:32:48.552853" elapsed="0.015365"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-11-09T13:32:48.583053" level="INFO">Element 'xpath=//b[contains(.,'Fique atento aos prazos e confira abaixo todas as atividades:')]' is displayed.</msg>
+<arg>xpath=//b[contains(.,'Fique atento aos prazos e confira abaixo todas as atividades:')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-09T13:32:48.568218" elapsed="0.014835"/>
+</kw>
+<status status="PASS" start="2024-11-09T13:32:43.960354" elapsed="4.622699"/>
 </kw>
 <kw name="Fechar navegador" owner="inspira_resources" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-11-09T12:26:22.463694" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-09T13:32:48.583620" elapsed="2.203432"/>
 </kw>
-<status status="PASS" start="2024-11-09T12:26:22.463694" elapsed="0.000994"/>
+<status status="PASS" start="2024-11-09T13:32:48.583620" elapsed="2.203432"/>
 </kw>
 <doc>Esse teste tem como objetivo fazer login com um usuário comum</doc>
 <tag>Login</tag>
-<status status="FAIL" start="2024-11-09T12:26:22.461770" elapsed="0.003008">Setup failed:
-Variable '${URL_LOGIN}' not found.</status>
+<status status="PASS" start="2024-11-09T13:32:39.411416" elapsed="11.376659"/>
 </test>
-<status status="FAIL" start="2024-11-09T12:26:22.274182" elapsed="0.191602"/>
+<status status="PASS" start="2024-11-09T13:32:39.168387" elapsed="11.622856"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Login</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Inspira Smoke">Inspira Smoke</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Inspira Smoke">Inspira Smoke</stat>
 </suite>
 </statistics>
 <errors>

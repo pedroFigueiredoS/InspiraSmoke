@@ -9,15 +9,17 @@ pipeline {
         stage('Preparar Ambiente') {
             steps {
                 echo "Instalando dependências..."
-                sh 'pip install -r requirements.txt'  // Instala dependências listadas no arquivo requirements.txt
+                 sh 'pip install robotframework==6.0.2'
+                 sh 'pip install selenium==4.10.0'
+                 sh 'pip install robotframework-seleniumlibrary==6.0.0'
+                 sh 'pip install webdriver-manager'  // Para gerenciar os drivers do navegador
             }
         }
         
         stage('Executar Testes') {
             steps {
-                echo "Executando testes do Robot Framework..."
-                // Executa o teste com o arquivo principal do Robot Framework
-                sh "robot ${ROBOT_OPTIONS} -d results inspira_smoke.robot"  // Substitua "inspira_tests.robot" pelo nome do seu arquivo principal de testes
+                echo "Executando teste com relatório HTML..."
+                 sh "robot ${ROBOT_OPTIONS} -d results inspira_smoke.robot"  // Substitua "inspira_tests.robot" pelo nome do seu arquivo principal de testes
             }
         }
     }
